@@ -28,6 +28,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rking/ag.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -105,6 +106,14 @@ let g:ycm_semantic_triggers =  {
     \   'lua' : ['.', ':'],
     \   'erlang' : [':'],
     \ }
+
+" ES Lint
+let g:neomake_verbose = 0
+autocmd! BufWritePost * Neomake
+autocmd! InsertChange,TextChanged * update | Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
 
 nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
 
