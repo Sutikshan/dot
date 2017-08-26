@@ -102,3 +102,7 @@ fi
 # Load everything
 zplug load
 
+# OPAM configuration
+. /Users/anupvarghese/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+
