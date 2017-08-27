@@ -22,6 +22,8 @@ To update Zsh plugins use `zplug update`
 
 To update Vim plugins use `:PlugUpdate`
 
+On mac `brew installl reattach-to-user-namespace` is required to run tmux properly
+
 Fonts
 -----
 
