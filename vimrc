@@ -207,9 +207,7 @@ autocmd VimEnter * call CorrectColorScheme()
 " ---
 " Icons
 " ---
-
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
-
 
 " ---
 " Mappings
