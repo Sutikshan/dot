@@ -43,9 +43,12 @@ set background=dark
 "let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_invert_signs=0
 let g:gruvbox_sign_column='dark0'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_italicize_comments=1
 colorscheme gruvbox
 
 set fillchars+=vert:│
+set encoding=utf8
 
 " ---
 " Nerdtree
@@ -200,6 +203,13 @@ function CorrectColorScheme()
   highlight VertSplit ctermbg=NONE guifg=#404040 guibg=NONE
 endfunction
 autocmd VimEnter * call CorrectColorScheme()
+
+" ---
+" Icons
+" ---
+
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+
 
 " ---
 " Mappings
