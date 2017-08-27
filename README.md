@@ -21,3 +21,13 @@ To force Tmux to update all plugins use `Ctrl+A I`.
 To update Zsh plugins use `zplug update`
 
 To update Vim plugins use `:PlugUpdate`
+
+Fonts
+-----
+
+Nerd fonts has to be enabled to show icons.
+
+```shell
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+```
