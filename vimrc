@@ -236,4 +236,4 @@ nnoremap <leader>gp :YcmCompleter GetParent<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
 
 nmap <silent> <leader>d <Plug>DashSearch
-
+nmap <esc><esc> :noh<return>
