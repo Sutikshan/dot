@@ -29,7 +29,7 @@ Plug 'rking/ag.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'neomake/neomake'
-Plug 'townk/vim-autoclose'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 call plug#end()
