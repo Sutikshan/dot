@@ -15,6 +15,12 @@
 -  p - paragraphs
 -  t - tags
 
+- dd/yy - delete/yank current line
+- D/C - delete/change until end of line
+- ^/$ - Move to start/end of a line
+- I/A - Move to start/end of a line and insert
+- o/O - Insert line above/below a line
+
 ### Motions
 
 -  a - all
