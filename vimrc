@@ -56,6 +56,7 @@ set encoding=utf8
 " Autoclose when closing last buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeMinimalUI=1
+let NERDTreeShowHidden=1
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 
 " ---
