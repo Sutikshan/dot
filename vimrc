@@ -31,6 +31,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'neomake/neomake'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'jaawerth/neomake-local-eslint-first'
 
 call plug#end()
 
@@ -113,15 +114,16 @@ let g:ycm_semantic_triggers =  {
     \   'erlang' : [':'],
     \ }
 
+nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
+
 " ES Lint
-let g:neomake_verbose = 0
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufReadPost * Neomake
 autocmd! InsertChange,TextChanged * update | Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
-
-nnoremap <F11> :YcmForceCompileAndDiagnostics <CR>
+let g:neomake_verbose = 0
+let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
 " ---
 " GitGutter Symbols
@@ -143,6 +145,18 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 " Enable tabline
 let g:airline#extensions#tabline#enabled = 1
+
+" ---
+" ctrlp
+" ---
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_show_hidden = 1
+
+" ---
+" ocaml
+" ---
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+
 
 " ---
 " Settings
