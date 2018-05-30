@@ -51,9 +51,27 @@ zplug "djui/alias-tips"
 zplug "felixr/docker-zsh-completion"
 
 # Load theme
-zplug 'halfo/lambda-mod-zsh-theme', as:theme
+# zplug 'halfo/lambda-mod-zsh-theme', as:theme
+zplug 'denysdovhan/spaceship-prompt', use:spaceship.zsh, from:github, as:theme
 
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT=' alias hint: '
+export SPACESHIP_PROMPT_ORDER=(
+  time
+  vi_mode
+  user
+  host
+  dir
+  git
+  node
+  docker
+  line_sep
+  char
+)
+
+export SPACESHIP_CHAR_SYMBOL='❯❯❯ '
+export SPACESHIP_DIR_TRUNC='1'
+
+
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT='👉  alias hint: '
 
 # User configuration
 export PATH="$HOME/.dotfiles/bin:$HOME/.bin:/usr/local/bin:$PATH"
@@ -106,3 +124,16 @@ zplug load
 . /Users/anupvarghese/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/anupvarghese/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/anupvarghese/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
