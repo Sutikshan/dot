@@ -54,6 +54,7 @@ zplug "felixr/docker-zsh-completion"
 # zplug 'halfo/lambda-mod-zsh-theme', as:theme
 zplug 'denysdovhan/spaceship-prompt', use:spaceship.zsh, from:github, as:theme
 
+export SPACESHIP_DOCKER_SYMBOL="🐳  "
 export SPACESHIP_PROMPT_ORDER=(
   time
   vi_mode
@@ -69,7 +70,7 @@ export SPACESHIP_PROMPT_ORDER=(
 
 export SPACESHIP_CHAR_SYMBOL='❯❯❯ '
 export SPACESHIP_DIR_TRUNC='1'
-
+export SPACESHIP_DIR_TRUNC='1'
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='👉  alias hint: '
 
