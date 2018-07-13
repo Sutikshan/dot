@@ -24,7 +24,8 @@ zplug "modules/directory",  from:prezto
 zplug "modules/completion", from:prezto
 
 # zsh users
-zplug "zsh-users/zsh-completions",              defer:0
+zplug "zsh-users/zsh-completions"
+zplug "jimeh/zsh-peco-history", defer:1
 zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
@@ -46,9 +47,6 @@ zplug "supercrabtree/k"
 
 # Tips for aliases
 zplug "djui/alias-tips"
-
-# Docker completion
-zplug "felixr/docker-zsh-completion"
 
 # Load theme
 # zplug 'halfo/lambda-mod-zsh-theme', as:theme
@@ -82,18 +80,10 @@ export TERM="xterm-256color"
 [[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="pd"
 export KEYTIMEOUT=1
 
-# :: Aliases and functions
-alias l="ls"
-alias ll="ls -al"
-alias kk="k -a"
-alias b="bookmark"
-alias bd="deletemark"
-alias j="jump"
-alias c="clear"
-alias ordermentum="cd ~/Documents/ordermentum/code/ordermentum"
-alias projects="cd ~/Documents/projects"
-alias dc="docker-compose"
-alias vim="/usr/local/bin/vim"
+# :: Aliases, functions & exports
+source ~/.work.alias.sh
+source ~/.work.exports.sh
+
 
 # PATHS
 export PATH="$PATH:`yarn global bin`"
