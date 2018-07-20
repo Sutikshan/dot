@@ -25,7 +25,7 @@ zplug "modules/completion", from:prezto
 
 # zsh users
 zplug "zsh-users/zsh-completions"
-zplug "jimeh/zsh-peco-history", defer:1
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
 zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
@@ -128,3 +128,7 @@ if [ -f '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc' ]; then source
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# fzf
+source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
+source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
