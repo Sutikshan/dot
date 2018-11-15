@@ -86,7 +86,7 @@ source ~/.work.exports.sh
 
 
 # PATHS
-export PATH="$PATH:`yarn global bin`"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export EDITOR="code"
 export GOPATH=$HOME/golang
@@ -111,9 +111,6 @@ fi
 # Load everything
 zplug load
 
-# OPAM configuration
-. /Users/anupvarghese/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -122,12 +119,6 @@ if [ -f '/Users/anupvarghese/google-cloud-sdk/path.zsh.inc' ]; then source '/Use
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc'; fi
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 # fzf
 source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
