@@ -120,6 +120,22 @@ if [ -f '/Users/anupvarghese/google-cloud-sdk/path.zsh.inc' ]; then source '/Use
 if [ -f '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/anupvarghese/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+git-rel() {
+  DEFAULT_BRANCH=$(date | tr -d ' ' | tr -d ':')
+
+  BRANCH=${1:-$DEFAULT_BRANCH}
+
+  gco master && gl origin master
+  gco develop && gl origin master
+  gco -b $BRANCH
+  grb -i master
+  git-cld
+}
+
+git-cld() {
+  git log --reverse --left-right --cherry-pick --date=format:"%y-%m-%d" --pretty=format:"%h %ad %<(20)%aN | %s" ${2:-HEAD}...${1:-master}
+}
+
 # fzf
 source ~/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh
 source ~/.zplug/repos/junegunn/fzf/shell/completion.zsh
