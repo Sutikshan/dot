@@ -1,12 +1,12 @@
 [user]
-	name = Anoop Varghese
-	email = avarghese@atlassian.com
+	name = Anand Dubey
+	email = s.anand.dubey@gmail.com
 
 [github]
-  user = anupvarghese
+  user = sutikshan
 
 [core]
-	excludesfile = /Users/anupvarghese/.gitignore_global
+	excludesfile = /Users/sutikshandubey/.gitignore_global
 
 [mergetool]
 	keepBackup = false
